@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1714926692 source:d:\pgdca-b32\cdoublefreetutos\simple-student-management-system\main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+
