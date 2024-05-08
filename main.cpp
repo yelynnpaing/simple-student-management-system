@@ -316,34 +316,28 @@ void adminPanel()
 {
     Admin adminUser;
     system("Color 0A");
-    char userName[50];
-    long int password;
     int code3;
-    cout << "\n\n\t* * To Enter Admin Panel, fill correctly.\n\n";
-    cout << "\nEnter Admin user name : ";
-    cin >> userName;
-    cout << "\nEnter password : ";
-    cin >> password;
-    while(code3 != 6)
-        {
-            system("cls");
-            cout << "\n\n\t\t\tWelcome Simple Student Management System\n";
-            cout << "\t\t\t= = = = = = = = = = = = = = = = = = = = =\n";
-            cout << "\n\nAdmin Dashboard\n";
-            cout << "- - - - - - - -\n\n";
-            cout << "= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =\n\n";
-            cout << "[1] Add New Student\n";
-            cout << "[2] Show All Students\n";
-            cout << "[3] Edit Student Detail\n";
-            cout << "[4] Delete Student\n";
-            cout << "[5] Search Student\n";
-            cout << "[6] Exit Admin Dashboard\n\n";
-            cout << "= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =\n";
-            cout << "\nEnter code (1 to 6) : ";
-            cin >> code3;
 
-            switch(code3)
-            {
+    while(code3 != 6)
+    {
+        system("cls");
+        cout << "\n\n\t\t\tWelcome Simple Student Management System\n";
+        cout << "\t\t\t= = = = = = = = = = = = = = = = = = = = =\n";
+        cout << "\n\nAdmin Dashboard\n";
+        cout << "- - - - - - - -\n\n";
+        cout << "= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =\n\n";
+        cout << "[1] Add New Student\n";
+        cout << "[2] Show All Students\n";
+        cout << "[3] Edit Student Detail\n";
+        cout << "[4] Delete Student\n";
+        cout << "[5] Search Student\n";
+        cout << "[6] Exit Admin Dashboard\n\n";
+        cout << "= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =\n";
+        cout << "\nEnter code (1 to 6) : ";
+        cin >> code3;
+
+        switch(code3)
+        {
             case 1:
                 system("cls");
                 adminUser.writeOnFile();
@@ -369,18 +363,18 @@ void adminPanel()
                 break;
             default:
                 continue;
-            }
+        }
 
-            int choice;
-            if(code3 != 6)
+        int choice;
+        if(code3 != 6)
+        {
+            cout << "\n\n\n\n => Enter the choice\n";
+            cout << "\n[1] Admin Menu" << "\t\t[0] Main Menu\n";
+            cout << "\nEnter a number : ";
+            cin >> choice;
+
+            switch(choice)
             {
-                cout << "\n\n\n\n => Enter the choice\n";
-                cout << "\n[1] Admin Menu" << "\t\t[0] Main Menu\n";
-                cout << "\nEnter a number : ";
-                cin >> choice;
-
-                switch(choice)
-                {
                 case 0:
                     system("cls");
                     code3 = 6;
@@ -388,11 +382,10 @@ void adminPanel()
                 default:
                     system("cls");
                     continue;
-
-                }
             }
-
         }
+
+    }
 
 }
 
@@ -418,6 +411,7 @@ int main()
         system("cls");
         system("Color 1A");
         int code1;
+        string userName, password;
 
         cout << "\n\n\t\t\tSimple Student Management System\n";
         cout << "\t\t\t= = = = = = = = = = = = = = = = \n";
@@ -439,7 +433,20 @@ int main()
             break;
         case 2:
             system("cls");
-            adminPanel();
+            cout << "\n\n\t* * To Enter Admin Panel, fill correctly.\n\n";
+            cout << "\nEnter Admin user name : ";
+            cin >> userName;
+            cout << "\nEnter password : ";
+            cin >> password;
+             if(userName == "admin" && password == "password")
+             {
+                 adminPanel();
+             }
+            else
+            {
+                cout << "\n\n\t\t* * * Invalid userName or password !!!\n\n\n";
+                system("pause");
+            }
             break;
         case 0:
             system("cls");
